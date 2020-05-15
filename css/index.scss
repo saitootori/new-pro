@@ -1,3 +1,12 @@
+// sass使用案例
+
+// 引用别的scss文件(只写文件名,不用加 _和.scss)
+// 最后会合在一起编译
+@import "common";
+
+// 定义变量
+$border-radius: 50%;
+
 // 嵌套
 header{
     nav{
@@ -34,6 +43,72 @@ header{
     @extend .goods;
     border: 1px solid black;
 }
+
+
+
+
+
+// 循环
+// 案例手风琴式Tag
+$start:0;
+$end:5;
+
+// for循环
+    // 一共有($end-$start)个
+    @for $now from $start through $end {
+        .cla-#{$now}{
+            left: $now*150px;
+            top: 10px;
+        }
+    }
+    // 一共有($end-1-$start)个
+    @for $now from $start to $end {
+        .cla-#{$now}{
+            left: $now*150px;
+            top: 10px;
+        }
+    }
+
+// while循环
+@while $start<$end {
+    .item-#{$start}{
+        left: $start*200px;
+    }
+    $start:$start+1;
+}
+
+// 定义一个列表
+$list:success error warning;
+// each循环
+@each $item in $list {
+    .item-#{$item}{
+        background-image: url(../img/#{$item}.jpg);
+    }
+}
+
+
+
+// 函数
+@function color($width){
+    @if $width<100 {
+        @return "red";
+    }@else{
+        @return "black";
+    }
+}
+
+.boxColor{
+    background-color: color(80);
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,60 @@
+
+git bash：
+        git config --global user.name (填git的用户名)
+        git config --global user.email (填创建git账户时用的邮箱)
+    创建ssh
+        ssh-keygen -t rsa -C (填创建git账户时用的邮箱)
+    下载项目
+        git clone (远程仓库地址)
+    生成.gitignore文件
+        touch .gitignore
+    上传本地版本库暂存区
+        git add .
+    上传本地版本库
+        git commit -m "(备注)"
+    上传到远程仓库
+        git push -u (远程仓库地址) master
+
+    查看所有版本
+        git log
+    恢复到指定版本
+        git reset --hard (版本序列号前7位)
+    创建新的分支
+        git branch (分支名)
+    切换分支
+        git checkout (分支名)
+    合并分支
+        git merge (分支名)
+    查看所有分支
+        git branch
+    删除分支
+        git branch -d (分支名)
+
+
+
+
+cmd：
+    初始化
+        npm init
+    安装局部gulp
+        npm i gulp --save-dev
+    安装sass(要先装ruby)
+        npm i gulp-sass node-sass  --save-dev
+    安装【压缩html】的插件
+        npm i gulp-htmlmin --save-dev
+    安装【压缩css】的插件
+        npm i  gulp-clean-css  --save-dev
+    安装【压缩js】的插件
+        npm i  gulp-uglify --save-dev
+    安装【压缩图片】的插件
+        npm i  gulp-imagemin --save-dev
+    安装【合并文件】的插件
+        npm i  gulp-concat --save-dev
+    安装【搭建服务器】的插件
+        npm i  gulp-connect --save-dev
+    安装【重命名】的插件
+        npm i  gulp-rename --save-dev
+    安装【ES6转ES5】的插件
+        npm install --save-dev  gulp-babel  @babel/core  @babel/preset-env
+
+
