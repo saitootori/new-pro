@@ -1,0 +1,41 @@
+// 嵌套
+header{
+    nav{
+        width: 150px;
+        height: 50px;
+    }
+}
+
+// 无参混合
+@mixin strangeBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.goodsBox{
+    @include strangeBox;
+    width: 200px;
+    height: 200px;
+}
+
+// 有参混合
+@mixin goodsShow($width:130px,$height:150px) {
+    width: $width;
+    height: $height;
+}
+.goods{
+    // 使用时，值可传可不传
+    @include goodsShow();
+    background: red;
+}
+
+// 继承(可以代替无参混合)
+.extendBox{
+    @extend .goods;
+    border: 1px solid black;
+}
+
+
+
+
+

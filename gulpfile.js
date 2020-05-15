@@ -1,3 +1,6 @@
+/*
+    记得改路径
+*/
 // 引入gulp模块
 let gulp = require("gulp");
 // 压缩HTML文件
@@ -12,6 +15,11 @@ let uglify = require("gulp-uglify");
 let babel = require("gulp-babel");
 // 启动web服务器(请求和响应)
 let connect = require("gulp-connect");
+
+let sass = require("gulp-sass");
+
+
+
 
 // 监听
 gulp.task("watch",async()=>{
@@ -29,12 +37,7 @@ gulp.task("watch",async()=>{
         gulp.src("./img/**/*")
         .pipe(gulp.dest("D:\\php\\img"));
     });
-    // 压缩css
-    gulp.watch("./css/**/*",async()=>{
-        gulp.src("./css/**/*")
-        .pipe(cssmin())
-        .pipe(gulp.dest("D:\\php\\css"));
-    });
+    
     // ES6转ES5
     // 压缩js
     gulp.watch("./js/**/*",async()=>{
@@ -45,6 +48,15 @@ gulp.task("watch",async()=>{
         .pipe(uglify())
         .pipe(gulp.dest("D:\\php\\js"));
     });
+
+    // sass编译成css后压缩css
+    gulp.watch("./css/**/*",async()=>{
+        gulp.src("./css/**/*")
+        .pipe(sass())
+        .pipe(cssmin())
+        .pipe(gulp.dest("D:\\php\\css1"));
+    });
+
 })
 
 
@@ -126,3 +138,11 @@ gulp.task("watch",async()=>{
 //     .pipe(gulp.dest("D:\\php\\js"));
 // });
 
+
+
+// 压缩css
+// gulp.watch("./css/**/*",async()=>{
+//     gulp.src("./css/**/*")
+//     .pipe(cssmin())
+//     .pipe(gulp.dest("D:\\php\\css"));
+// });

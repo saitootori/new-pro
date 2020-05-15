@@ -10,3 +10,6 @@ gulp-uglify
 gulp-concat
 gulp-babel
 gulp-connect
+
+后面加了
+gulp-sass
