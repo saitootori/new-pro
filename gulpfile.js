@@ -15,7 +15,7 @@ let uglify = require("gulp-uglify");
 let babel = require("gulp-babel");
 // 启动web服务器(请求和响应)
 let connect = require("gulp-connect");
-
+// 编译scss
 let sass = require("gulp-sass");
 
 
@@ -54,7 +54,7 @@ gulp.task("watch",async()=>{
         gulp.src("./css/**/*")
         .pipe(sass())
         .pipe(cssmin())
-        .pipe(gulp.dest("D:\\php\\css1"));
+        .pipe(gulp.dest("D:\\php\\css"));
     });
 
 })
